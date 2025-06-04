@@ -1,7 +1,7 @@
 public class OptimizingFurthestDistance {
     public int solution(int[] A){
         // Time complexity: O(N)
-        // Space complexity: O(1)
+        // Space complexity: O(1) additional space 
 
         // find furthest distance between 2 non-equal numbers 
         int N = A.length;

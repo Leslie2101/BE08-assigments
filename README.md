@@ -1,4 +1,6 @@
-**Current assigments**: BinaryGap.java, SameSumDice.java
+**Current assigments**: FindIntervalInArray.java, OptimzingFurthestDistance.java
+
+
 
 
 

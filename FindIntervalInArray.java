@@ -3,7 +3,7 @@ import java.util.HashSet;
 public class FindIntervalInArray {
     public static int solution(int[] A, int L, int R){
         // Time complexity: O(N)
-        // Space complexity: O(R-L+1)
+        // Space complexity: O(R-L+1) additional space 
 
         int[] frequency = new int[R-L+1];
     
