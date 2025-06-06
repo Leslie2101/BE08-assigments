@@ -2,42 +2,20 @@ public class ChangeMoney {
     public static int changeMoney(int money){
         // Approach: pick the highest coin every time
         // this approach can only work if the higher coins is multiple of some smaller coins 
-        // Time complexity: O(k) - k is the minimum number of coins 
+        // Time complexity: O(1) 
         // Space complexity: O(1)
         
         int[] types = new int[]{1, 2, 5, 10, 20, 50, 100, 200, 500};
 
         int cnt = 0;
-        while (money!=0){
-            // find highest coin type that is lower or equal to money by BinarySearch
-            int biggestCoin = findLowestOrEqual(types, money);  // time complexity: Olog(X) (X = 9) -> O(1)
-            cnt++;
-            money -= biggestCoin;
+        for (int i = types.length-1; i > -1; i--){
+            cnt += money / types[i];
+            money = money % types[i];
+            if (money == 0) return cnt;
         }
-    
         return cnt;
     }
 
-
-    private static int findLowestOrEqual(int[] types, int money){
-        // find highest number in types that is lower or equal to money
-        int low = 0;
-        int high = types.length - 1;
-        int ans = -1;
-
-        while (low <= high){
-            int mid = (low + high)/2;
-
-            if (types[mid] <= money){
-                ans = types[mid];
-                low = mid + 1;
-            } else {
-                high = mid - 1;
-            }
-        }
-
-        return ans;
-    }
 
 
     public static void main(String[] args) {
