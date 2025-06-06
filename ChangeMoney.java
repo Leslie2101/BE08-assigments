@@ -6,6 +6,7 @@ public class ChangeMoney {
 
         int cnt = 0;
         while (money!=0){
+            // find highest coin type that is lower or equal to money by BinarySearch
             int biggestCoin = findLowestOrEqual(types, money);
             cnt++;
             money -= biggestCoin;
