@@ -1,7 +1,7 @@
 public class ChangeMoney {
     public static int changeMoney(int money){
         // Approach: pick the highest coin every time
-        // this approach can only work if the higher coins  
+        // this approach can only work if the higher coins is multiple of some smaller coins 
         int[] types = new int[]{1, 2, 5, 10, 20, 50, 100, 200, 500};
 
         int cnt = 0;
