@@ -1,4 +1,4 @@
-**Current assigments**: [LinkedList](./LinkedList)
+**Current assigments**: [Tree](./Tree)
 
 
 
