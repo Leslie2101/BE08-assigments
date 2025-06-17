@@ -7,6 +7,8 @@ public class Tree {
     Node root;
 
     public Node findNode(int value){
+        
+        // space complexity: O(n), time complexity:O(n) 
         Queue<Node> queue = new LinkedList<>();
 
 
