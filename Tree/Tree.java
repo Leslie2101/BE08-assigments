@@ -6,6 +6,31 @@ import java.util.Queue;
 public class Tree {
     Node root;
 
+
+
+    public Node findNodeDFS(int value){
+         // find from root
+        return findNodeDFS(root, value);
+    }
+
+
+    public Node findNodeDFS(Node node, int value){
+        // find node with DFS and recursion
+        // time complexity: O(n), space complexity: O(n)
+        if (node == null) return null;  
+
+        // explore children first 
+        for (Node child: node.children){
+            Node found = findNodeDFS(child, value);
+            if (found != null) return found; 
+        }
+
+        // explore current node 
+        if (node.value == value) return node;
+
+        return null;
+    }
+
     public Node findNode(int value){
         
         // space complexity: O(n), time complexity:O(n) 

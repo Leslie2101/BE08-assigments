@@ -15,7 +15,7 @@ public class Main {
         node = new Node(40);
         tree.root.children.add(node);
 
-        node = tree.findNode(50);
+        node = tree.findNodeDFS(50);
 
         if (node != null){
             node.children.add(new Node(10));
