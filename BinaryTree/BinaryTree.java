@@ -53,17 +53,17 @@ public class BinaryTree {
         // similar logic as above, we use an array as parameter to allow adding in each recursion function
         int[] height = new int[1];
         ArrayList<BinaryTreeNode> imbalanceNodes = new ArrayList<>();
-        isBalanceWithImbalancedNodes(root, height, imbalanceNodes);
+        findImbalancedNodes(root, height, imbalanceNodes);
         if (imbalanceNodes.isEmpty()) System.out.println("No imbalance nodes");
 
         return imbalanceNodes;
     }
 
 
-    public boolean isBalanceWithImbalancedNodes(BinaryTreeNode node, int[] height, ArrayList<BinaryTreeNode> imBinaryTreeNodes){
+    public void findImbalancedNodes(BinaryTreeNode node, int[] height, ArrayList<BinaryTreeNode> imBinaryTreeNodes){
         if (node == null) {
             height[0] = 0;
-            return true;
+            return;
         };
 
 
@@ -71,19 +71,18 @@ public class BinaryTree {
         int[] rightHeight = new int[1];
 
 
-        boolean leftBalance = isBalanceWithImbalancedNodes(node.left, leftHeight, imBinaryTreeNodes);
-        boolean rightBalance = isBalanceWithImbalancedNodes(node.right, rightHeight, imBinaryTreeNodes);
+        findImbalancedNodes(node.left, leftHeight, imBinaryTreeNodes);
+        findImbalancedNodes(node.right, rightHeight, imBinaryTreeNodes);
 
 
         height[0] = Math.max(leftHeight[0], rightHeight[0]) + 1;
 
 
 
-        // if children nodes are all balanced, check imbalance caused by current node
-        if (Math.abs(leftHeight[0] - rightHeight[0]) <= 1) return true;
+        // check if current node is imbalance
+        if (Math.abs(leftHeight[0] - rightHeight[0]) <= 1) return;
 
         imBinaryTreeNodes.add(node);
-        return false;
 
     }
 }
