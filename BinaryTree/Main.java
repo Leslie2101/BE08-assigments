@@ -34,6 +34,31 @@ public class Main {
         for (BinaryTreeNode node: imNodes){
             System.out.println(node.value);
         }
+
+        BTreePrinter.printNode(binTree.root);
+
+        // binTree.balance();
+
+        // BTreePrinter.printNode(binTree.root);
+
+//         1               
+//         / \       
+//        /   \      
+//       /     \     
+//      /       \    
+//      2       3       
+//             / \   
+//            /   \  
+//            4   5   
+//           / \     
+//           6 7     
+                                  
+//      4       
+//     / \   
+//    /   \  
+//    1   3   
+//   / \ / \ 
+//   2 6 7 5 
         
 
         // add one more node to make balance tree
@@ -44,6 +69,12 @@ public class Main {
         for (BinaryTreeNode node: imNodes){
             System.out.println(node.value);
         }
+
+        BTreePrinter.printNode(binTree.root);
+
+        // binTree.balance();
+
+        // BTreePrinter.printNode(binTree.root);
 
 
         // multiple imbalance node 
@@ -57,14 +88,33 @@ public class Main {
         }
 
 
-        // tree:
-            //     1
-            //   /    \
-            // 2       3
-            //         | 
-            //         4   
-            //       / |
-            //     6   7
+        BTreePrinter.printNode(binTree.root);
+
+        binTree.balance();
+
+        BTreePrinter.printNode(binTree.root);
+
+//         1               
+//         / \       
+//        /   \      
+//       /     \     
+//      /       \    
+//      2       3       
+//             /     
+//            /      
+//            4       
+//           / \     
+//           6 7     
+                                  
+//      4       
+//     / \   
+//    /   \  
+//    1   3   
+//   / \ /   
+//   2 6 7   
+
+
+        
 
     }
     
