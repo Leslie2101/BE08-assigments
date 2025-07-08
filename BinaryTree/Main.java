@@ -114,6 +114,18 @@ public class Main {
 //   2 6 7   
 
 
+
+        System.out.println("============== BST =============");
+        int[] numbers = {1, 2, 3, 4, 5, 6, 7};
+
+        BinarySearchTree bst = new BinarySearchTree();
+        bst.buildBST(numbers);
+        
+
+        BTreePrinter.printNode(bst.root);
+
+        bst.printBST();
+
         
 
     }

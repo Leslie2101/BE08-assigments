@@ -2,7 +2,6 @@ package BinaryTree;
 
 import java.util.ArrayList;
 
-import javax.swing.tree.TreeNode;
 
 public class BinaryTree {
     BinaryTreeNode root;
@@ -83,7 +82,7 @@ public class BinaryTree {
         } else if (rightHeight[0] - leftHeight[0] > 1){
             // rotate right subtree if the right.right < right.left
             if (rrH[0] < rlH[0]){
-                System.out.println("node " + node.value+ " rrH: " + rrH[0]);
+                // System.out.println("node " + node.value+ " rrH: " + rrH[0]);
                 node.right = rotateRight(node.right);
                 rrH[0] += 1;
                 rlH[0] -= 1;
