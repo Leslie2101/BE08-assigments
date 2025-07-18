@@ -60,10 +60,10 @@ public class SixDigit {
     
     
     public static void main(String[] args) {
-        System.out.println(solution(1, 2, 6, 4, 5, 6));
-        System.out.println(solution(2, 4, 5, 9, 5, 9));
-        System.out.println(solution(0, 0, 0, 7, 8, 9));
-        System.out.println(solution(0, 0, 0, 0, 0, 0));
+        System.out.println(solution(1, 7, 3, 4, 8, 9));
+        System.out.println(solution(4, 4, 6, 6, 9, 9));
+        System.out.println(solution(2, 3, 4, 5, 6, 6));
+        System.out.println(solution(1, 3, 5,8, 8, 9));
 
 
     }
