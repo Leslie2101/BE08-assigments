@@ -136,3 +136,11 @@ VALUES
     (3, 3),
     (4, 4)
 ;
+
+
+
+--   CREATE INDEX ON movie name for fast searching
+USE galaxy_cinema;
+CREATE INDEX index_film_name ON film (name);
+-- ALTER TABLE film DROP INDEX index_film_name;
+SELECT * FROM film WHERE name = 'Movie A';
