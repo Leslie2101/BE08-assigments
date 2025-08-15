@@ -16,7 +16,7 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 
-USE galaxy_cinema; 
+USE galaxy_cinema;
 --
 -- Table structure for table `booking`
 --
