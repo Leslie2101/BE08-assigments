@@ -69,7 +69,10 @@ GROUP BY rs.booking_id
 HAVING COUNT(*) > 1;
 
 -- Show room show more than 2 film in one day
-
+SELECT DISTINCT room_id
+FROM screening s
+GROUP BY room_id, DATE(start_time)
+HAVING COUNT(DISTINCT film_id) > 2;
 
 -- which room show the least film ?
 
