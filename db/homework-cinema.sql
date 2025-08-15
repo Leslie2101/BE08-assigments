@@ -75,7 +75,13 @@ GROUP BY room_id, DATE(start_time)
 HAVING COUNT(DISTINCT film_id) > 2;
 
 -- which room show the least film ?
-
+SELECT *
+FROM 
+	(SELECT room_id, COUNT(DISTINCT film_id) AS film_count
+	FROM screening s
+	GROUP BY room_id) AS tbl
+ORDER BY film_count ASC
+LIMIT 1;
 
 -- what film don't have booking
 -- WHAT film have show the biggest number of room?
