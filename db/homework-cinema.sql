@@ -38,9 +38,11 @@ FROM film;
 
 
 -- What is the distance (in days) of the 1st and the last film
-SELECT film_id, DATEDIFF(MAX(start_time), MIN(start_time))  AS diff
+SELECT f.name, DATEDIFF(MAX(start_time), MIN(start_time))  AS diff
 FROM screening s
+LEFT JOIN film f ON s.film_id = f.id
 GROUP BY film_id;
+
 
 
 -- Show all Screening Information including film name, room name, time of film "Tom&Jerry"
@@ -86,6 +88,13 @@ ORDER BY film_count ASC
 LIMIT 1;
 
 -- what film don't have booking
+SELECT f.id, f.name
+FROM film f
+LEFT JOIN screening s ON f.id = s.film_id 
+LEFT JOIN booking b ON s.id = b.screening_id
+GROUP BY f.id
+HAVING COUNT(*) = 0;
+
 
 -- WHAT film have show the biggest number of room?
 -- Show number of film that show in every day of week and order descending
